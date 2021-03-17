@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      #coffee, #corn, #water{
+        color: red;
+      }
+    </style>
+  </head>
+  <script>
+    var _money = 0;
+    var stringnum = 0;
+    var intnum = 0;
+  </script>
+  <body>
+    <input id="coffee" type="button" value="커피(700원)" onclick="minusMoney(this)">
+    <input id="corn" type="button" value="옥수수수염차(1000원)" onclick="minusMoney(this)">
+    <input id="water" type="button" value="물(500원)" onclick="minusMoney(this)">
+    <br>
+    <br>
+    <input id="thousand" type="button" value="1000원" onclick="addMoney(this)">
+    <input id="fivehundred" type="button" value="500원" onclick="addMoney(this)">
+    <input id="hundred" type="button" value="100원" onclick="addMoney(this)">
+    <br>
+    <br>
+    <p>현재 금액: <span id="vending_machine"></span>원</p>
+  </body>
+  <script>
+      document.getElementById('vending_machine').innerText = _money;
+
+
+      function coloring() {
+        if(_money >= 1000){
+          document.getElementById('coffee').style.color = "blue";
+          document.getElementById('corn').style.color = "blue";
+          document.getElementById('water').style.color = "blue";
+        } else if(_money >= 700){
+          document.getElementById('coffee').style.color = "blue";
+          document.getElementById('corn').style.color = "red";
+          document.getElementById('water').style.color = "blue";
+        } else if(_money >=500) {
+          document.getElementById('coffee').style.color = "red";
+          document.getElementById('corn').style.color = "red";
+          document.getElementById('water').style.color = "blue";
+        } else {
+          document.getElementById('coffee').style.color = "red";
+          document.getElementById('corn').style.color = "red";
+          document.getElementById('water').style.color = "red";
+        }
+      }
+    </script>
+</html>
